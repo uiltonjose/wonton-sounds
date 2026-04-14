@@ -27,10 +27,10 @@ const sounds = [
   { id: 'piru',            label: 'Piru',             file: sndPiru,    image: imgPiru    },
 ]
 
-function SoundButton({ sound, isPlaying, onClick }) {
+function SoundButton({ sound, isPlaying, isSpinning, onClick }) {
   return (
     <button
-      className={`sound-btn ${isPlaying ? 'playing' : ''}`}
+      className={`sound-btn ${isPlaying ? 'playing' : ''} ${isSpinning ? 'spinning' : ''}`}
       onClick={() => onClick(sound)}
       title={sound.label}
     >
@@ -120,6 +120,7 @@ export default function App() {
             key={sound.id}
             sound={sound}
             isPlaying={playingId === sound.id}
+            isSpinning={playingAll || playingId === sound.id}
             onClick={handlePlay}
           />
         ))}

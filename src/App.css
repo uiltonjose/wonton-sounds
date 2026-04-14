@@ -90,6 +90,16 @@
   box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
 }
 
+.sound-btn.playing .btn-image-wrapper img,
+.sound-btn.spinning .btn-image-wrapper img {
+  animation: spin 1.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 /* ===== IMAGE WRAPPER ===== */
 .btn-image-wrapper {
   position: relative;
